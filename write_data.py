@@ -22,8 +22,9 @@ import sys
 
 
 
-company = sys.argv[1]
-start_date = sys.argv[2]
-end_date = sys.argv[3]
-data = data.DataReader(company, 'yahoo', start_date , end_date)
-data.to_csv(company+'_'+start_date+'_'+end_date+'.csv')
+if '__name__'== 'main':
+	company = sys.argv[1]
+	start_date = sys.argv[2]
+	end_date = sys.argv[3]
+	data = data.DataReader(company, 'yahoo', start_date , end_date)
+	data.to_csv('Data/'+company+'.csv')
